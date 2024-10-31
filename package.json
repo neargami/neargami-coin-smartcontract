@@ -1,0 +1,23 @@
+{
+  "name": "neargami-coin",
+  "version": "1.3.0",
+  "license": "(MIT AND Apache-2.0)",
+  "type": "module",
+  "scripts": {
+    "build": "near-sdk-js build src/contract.ts build/neargami_coin.wasm",
+    "test": "$npm_execpath run build && ava -- ./build/neargami_coin.wasm"
+  },
+  "dependencies": {
+    "near-sdk-js": "2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^6.1.3",
+    "near-workspaces": "^3.5.0",
+    "typescript": "^5.4.5"
+  },
+  "ava": {
+    "files": [
+      "sandbox-test/*.ava.js"
+    ]
+  }
+}
